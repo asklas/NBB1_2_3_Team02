@@ -121,7 +121,7 @@ function InsertOrder({ memberId }) {
             // 주문 입력 폼에 데이터 설정
             const formattedItems = response.data.flatMap(order =>
                 order.orderItems.map(item => ({
-                    productId: item.product?.id,
+                    productId: item.productId,
                     productName: item.product?.name,
                     quantity: item.quantity,
                     price: item.price

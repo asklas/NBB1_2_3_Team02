@@ -61,6 +61,22 @@ data class OrderDTO(
             orderItems = orders.orderItems.map { OrderItemDTO(it) } // OrderItem을 OrderItemDTO로 변환
         )
     }
+    data class PrevOrderListDTO(
+        var id: Long? = null, // 주문 ID
+        var memberId: Long? = null, // 회원 ID
+        var totalPrice: Long? = null, // 총 가격
+        var createdAt: String? = null, // 생성일
+        var orderItems: List<OrderItemDTO>? = null // 주문 항목 리스트
+    ) {
+        // 엔티티로부터 DTO 생성
+        constructor(orders: Orders?) : this(
+            id = orders!!.id,
+            memberId = orders.member.id,
+            totalPrice = orders.totalPrice,
+            createdAt = orders.createdAt?.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")), // 포맷 적용
+            orderItems = orders.orderItems.map { OrderItemDTO(it) } // OrderItem을 OrderItemDTO로 변환
+        )
+    }
 
     // 내부 클래스 - 페이지 요청 DTO
     data class PageRequestDTO(

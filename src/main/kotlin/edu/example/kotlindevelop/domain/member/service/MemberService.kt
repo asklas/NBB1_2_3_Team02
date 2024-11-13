@@ -49,9 +49,11 @@ class MemberService(
 
         // 비밀번호 암호화
         dto.pw = passwordEncoder.encode(dto.pw)
+        val regisDto = dto.toEntity()
+        regisDto.mImage = "api/v1/members/upload/defaultImageUrl.jpg"
 
         // 회원 저장
-        memberRepository.save(dto.toEntity())
+        memberRepository.save(regisDto)
 
         return MemberDTO.StringResponseDto("회원가입이 완료되었습니다")
     }

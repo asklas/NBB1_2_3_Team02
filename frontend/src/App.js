@@ -107,7 +107,6 @@ function App() {
                 return (
                     <ul className="sub-menu">
                         <li onClick={() => showComponent('userControl')}> 회원 정보 조회</li>
-                        <li onClick={() => showComponent('lossControl')}> 식재료 조회</li>
                     </ul>
                 );
             } else {
