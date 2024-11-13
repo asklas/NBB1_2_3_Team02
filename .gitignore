@@ -44,6 +44,7 @@ nbe2_2_dev.mv.db
 nbe2_2_dev.trace.db
 
 #secret yml#
+application.yml
 application-secret.yml
 application-prod.yml
 
