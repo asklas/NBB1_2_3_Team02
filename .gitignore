@@ -45,6 +45,7 @@ nbe2_2_dev.trace.db
 
 #secret yml#
 application-secret.yml
+application-prod.yml
 
 # Ignore ProductService file
 /src/main/kotlin/edu/example/kotlindevelop/domain/product/service/ProductService.kt

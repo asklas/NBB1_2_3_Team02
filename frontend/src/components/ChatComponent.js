@@ -12,7 +12,7 @@ const ChatComponent = ({ user }) => {
         // STOMP 클라이언트 설정
         const stompClient = new Client({
             webSocketFactory: () => {
-                return new SockJS('http://localhost:8090/ws'); // 웹소켓 엔드포인트
+                return new SockJS(`${window.location.origin}/ws`); // 웹소켓 엔드포인트
             },
             debug: (str) => {
                 console.log(str);

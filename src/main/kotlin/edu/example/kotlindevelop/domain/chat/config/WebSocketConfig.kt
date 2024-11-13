@@ -10,7 +10,10 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 class WebSocketConfig : WebSocketMessageBrokerConfigurer {
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("/ws").setAllowedOrigins("http://localhost:3000").withSockJS()
+        registry.addEndpoint("/ws").setAllowedOrigins(
+            "http://localhost:3000",  // 개발 환경 허용
+            "http://aws-est-env.eba-qadyyncj.ap-northeast-2.elasticbeanstalk.com" // 배포 환경 허용
+        ).withSockJS()
     }
 
     override fun configureMessageBroker(config: MessageBrokerRegistry) {

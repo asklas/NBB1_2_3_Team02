@@ -29,6 +29,7 @@ class MemberController (
     @GetMapping("/loginSuccess")
     fun loginSuccess(@AuthenticationPrincipal oauth2User: OAuth2User): ResponseEntity<Any> {
         val userId = oauth2User.getAttribute<String>("providerId")
+
         return memberService.checkLoginIdAndPassword(userId!!, "123").let {
             val accessToken = memberService.generateAccessToken(it.id, it.loginId)
             val refreshToken = memberService.generateRefreshToken(it.id, it.loginId)
@@ -39,7 +40,15 @@ class MemberController (
                 this.accessToken = accessToken
                 this.refreshToken = refreshToken
             }
-            ResponseEntity.ok(mapOf("redirectUrl" to "http://localhost:3000", "userInfo" to it))
+
+            // 환경에 따라 리다이렉트 URL 설정
+            val redirectUrl = if (System.getenv("ENV") == "production") {
+                "http://aws-est-env.eba-qadyyncj.ap-northeast-2.elasticbeanstalk.com"
+            } else {
+                "http://localhost:3000"  // 개발 환경에서는 localhost
+            }
+
+            ResponseEntity.ok(mapOf("redirectUrl" to redirectUrl, "userInfo" to it))
         }
     }
 

@@ -12,7 +12,7 @@ const ChatComponentAdmin = ({ user }) => {
     // STOMP 클라이언트 설정 및 메시지 처리
     useEffect(() => {
         const stompClient = new Client({
-            webSocketFactory: () => new SockJS('http://localhost:8090/ws'),  // 웹소켓 엔드포인트
+            webSocketFactory: () => new SockJS(`${window.location.origin}/ws`),  // 웹소켓 엔드포인트
             debug: (str) => console.log(str),
             onConnect: () => {
                 console.log('Connected');
