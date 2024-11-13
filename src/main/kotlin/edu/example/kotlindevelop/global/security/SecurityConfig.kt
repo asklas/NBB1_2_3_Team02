@@ -1,7 +1,6 @@
 package edu.example.kotlindevelop.global.security
 
 import edu.example.kotlindevelop.global.securityOAuth2.CustomOAuth2UserService
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -21,9 +20,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 class SecurityConfig(
     private val customOAuth2UserService: CustomOAuth2UserService,
 ) {
-    @Value("\${app.redirect-url}")
-    lateinit var redirectUrl: String
-
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
 
@@ -53,7 +49,7 @@ class SecurityConfig(
             .oauth2Login { oauth2 ->
                 oauth2
                     .userInfoEndpoint { it.userService(customOAuth2UserService) }
-                    .defaultSuccessUrl(redirectUrl, true) // 로그인 성공 후 리디렉션할 URL
+                    .defaultSuccessUrl("http://localhost:3000?code=00", true) // 로그인 성공 후 리디렉션할 URL
                     .failureUrl("/login?error=true")
             }
 
