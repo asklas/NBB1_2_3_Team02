@@ -1,0 +1,466 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 요소의 크기 계산을 더 쉽게 해줌 */
+}
+
+/* 기본적인 스타일 설정 */
+.AppLogBef {
+  background-color: #f8f9fa; /* 배경 색상 */
+  text-align: center; /* 중앙 정렬 */
+  padding: 20px; /* 내부 여백 */
+  height: 100vh;
+}
+
+.AppLogAf {
+  background-color: #ececec; /* 로그인 후 배경 색상 */
+  text-align: left; /* 왼쪽 정렬 */
+  padding: 0; /* 내부 여백 */
+  height: 100vh;
+}
+
+.login-header{
+  margin: 20px;
+}
+
+.index-header {
+  background-color: #5680b5; /* 원하는 배경색 */
+  padding: 10px 20px; /* 상하 여백은 줄이고 좌우 여백은 유지 */
+  margin: 0; /* 기본 마진 제거 */
+  border-bottom: 1px solid #ccc; /* 구분선 추가 (선택 사항) */
+}
+
+
+.index-info {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: right; /* 양쪽 정렬 */
+  margin-bottom: 20px; /* 하단 여백 */
+}
+
+.main-container {
+  display: flex; /* 가로 방향으로 배열 */
+  flex-direction: row; /* 수평으로 정렬 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+
+.sidebar {
+  width: 15%; /* 사이드바 너비 */
+  background-color: #f0f0f0; /* 연한 회색으로 변경 */
+  padding: 20px; /* 내부 여백 */
+  color: #333; /* 글자 색상 */
+  height: 80vh; /* 전체 높이 차지 */
+  display: flex; /* flex 사용 */
+  flex-direction: column; /* 세로 정렬 */
+  border-right: gray solid 1px;
+}
+.auth-header{
+  background-color: rgba(0,0,0,0%);
+  border: none;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: black;
+}
+.auth-header:hover {
+  color: #5680b5; /* hover 시 색 변경 */
+  background-color: rgba(0,0,0,0%);
+}
+
+.auth-button {
+  background-color: rgba(0,0,0,0%); /* 버튼 배경색 */
+  color: black; /* 버튼 글자 색상 */
+  padding: 10px; /* 내부 여백 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 포인터 커서 */
+  width: 100%; /* 버튼 너비 100% */
+  margin-bottom: 0; /* 버튼 간격 */
+  transition: background-color 0.3s; /* 배경색 변화 애니메이션 */
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.auth-button:hover {
+  background-color: #5680b5; /* hover 시 배경색 변경 */
+}
+
+.button-container {
+  display: flex; /* Flexbox 사용 */
+  justify-content: left; /* 버튼 간격을 맞춤 */
+  width: 100%; /* 부모 요소의 너비에 맞춤 */
+}
+
+.button-container button {
+  background-color: #5680b5; /* 기본 버튼 배경색 */
+  color: white; /* 글자 색상 */
+  padding: 8px 20px; /* 내부 여백 */
+  border: none; /* 테두리 제거 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s; /* 배경색 변화 애니메이션 */
+  margin: 2px;
+  font-size: 14px;
+}
+
+.button-container button:hover {
+  background-color: #0056b3; /* hover 시 배경색 변경 */
+}
+
+.component-container {
+  flex-grow: 1; /* 가변 높이 */
+  padding: 20px; /* 내부 여백 */
+}
+.chat-container {
+  width: 300px; /* 고정 폭 또는 비율로 설정 */
+  margin-left: 20px; /* 간격 조정 */
+}
+
+/* 로그인 및 회원가입 페이지 스타일 */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  height: 500px; /* 높이 조정 */
+  width: 30%; /* 너비 조정 */
+  margin: auto; /* 자동 중앙 정렬 */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+  background-color: #fff; /* 배경색 흰색 */
+  padding: 20px; /* 내부 여백 */
+  border-radius: 10px; /* 모서리 둥글게 */
+  text-align: left;
+}
+.auth-container button{
+  text-align: center;
+  width: 30%;
+}
+
+.formInfo {
+  text-align: center; /* 텍스트 중앙 정렬 */
+  margin-bottom: 20px; /* 아래 여백 추가 */
+  font-size: 24px; /* 원하는 폰트 크기 설정 */
+  font-weight: bold; /* 글씨 두껍게 설정 (선택 사항) */
+}
+
+.error-message {
+  color: red; /* 에러 메시지 색상 */
+  margin-top: 10px; /* 위쪽 여백 추가 */
+}
+
+.inputform {
+  color: black;
+}
+form {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 90%;
+}
+input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.input-info{
+  display: inline-block;
+  width: 20%;
+  /*border: 1px solid #ccc; !* 확인을 위한 테두리 *!*/
+  /*margin-left: 2px;*/
+}
+
+.sub-menu {
+  list-style-type: none; /* 기본 리스트 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  margin: 0; /* 마진 제거 */
+  background-color: #f0f0f0; /* 배경 색 */
+  border-radius: 5px; /* 모서리 둥글게 */
+}
+
+.sub-menu li {
+  cursor: pointer;
+  padding: 10px 10px 10px 20px;
+}
+
+.sub-menu li:hover {
+  background-color: #e0e0e0; /* 호버 시 배경 색 변경 */
+}
+
+.delete-button{
+  margin-left: 10px;
+  background-color: #d9534f;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.delete-button:hover{
+  background-color: #c9302c;
+}
+
+.user-delete-container {
+  display: flex; /* Flexbox 사용 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  /*justify-content: center; !* 수직 중앙 정렬 *!*/
+  text-align: center; /* 텍스트 중앙 정렬 */
+  height: 70vh;
+}
+
+.user-delete-button {
+  background-color: #d9534f; /* 붉은색 배경 */
+  color: white; /* 흰색 텍스트 */
+  border: none; /* 기본 테두리 제거 */
+  border-radius: 5px; /* 둥근 모서리 */
+  padding: 10px 20px; /* 여백 설정 */
+  font-size: 16px; /* 글자 크기 */
+  cursor: pointer; /* 마우스 커서 변경 */
+  transition: background-color 0.3s; /* 배경색 변화 효과 */
+  margin-top: 20%;
+}
+
+/* 버튼에 마우스를 올렸을 때의 효과 */
+.user-delete-button:hover {
+  background-color: #c9302c; /* 조금 더 어두운 붉은색 */
+}
+
+/* InsertOrder.css */
+
+.insert-order-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 20px auto;
+}
+
+.insert-order-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black;
+}
+.insert-order-table {
+  width: 100%;
+  border-collapse: collapse; /* 테이블 셀 간의 경계 제거 */
+}
+
+.insert-order-table th,
+.insert-order-table td {
+  border: 1px solid #ccc; /* 테두리 추가 */
+  padding: 3px; /* 내부 여백 */
+  text-align: center; /* 중앙 정렬 */
+}
+.insert-order-container button{
+  background-color: rgba(0,0,0,10%);
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.insert-order-container button:hover{
+  background-color: rgba(0,0,0,20%);
+}
+
+.insert-order-table th {
+  background-color: #f0f0f0; /* 헤더 배경색 */
+}
+
+.insert-order-item {
+  background-color: #f9f9f9; /* 각 아이템 배경색 */
+}
+
+.insert-order-item input,
+.insert-order-item select {
+  width: 100%; /* 입력창 너비 조정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  border: 0;
+  background-color: #f9f9f9;
+}
+.insert-order-container .insert-order-button:hover{
+  background-color: #5680b5;
+}
+
+/*상품명 평균단가 선택창*/
+#product-select {
+  width: 160px; /* 드롭다운의 너비 */
+  padding: 10px; /* 내부 여백 */
+  border: 1px solid #ccc; /* 테두리 스타일 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  background-color: #f9f9f9; /* 배경색 */
+  font-size: 16px; /* 글자 크기 */
+  cursor: pointer; /* 마우스 커서 모양 */
+}
+
+/*주문목록 확인 페이지*/
+.order-check-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 20px auto;
+
+}
+/*주문목록 박스*/
+.tableStyle {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  position: relative;
+
+}
+/*주문목록 부제목*/
+.tableheader th{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  background-color: #5680b5;
+
+  color: black;
+  text-align: center;
+}
+/*주문목록 내용*/
+.nestedordertable {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/*-상세보기-*/
+.nestedTableStyle {
+  width: 100%;
+  margin: 10px 0 10px;
+
+  padding-left: 20%;
+  display: block;
+  border-collapse: collapse; /* 테이블 셀 간의 경계 제거 */
+}
+.nestedtable-header th{
+  font-size: 14px;
+  width: 350px;
+  border: 1px solid #ccc;
+  background-color: #dddddd;
+  color: black;
+  text-align: center;
+}
+.nestedtable-body td {
+  font-size: 14px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  background-color: #fafafa;
+  color: black;
+  text-align: center;
+}
+
+.nestedtable-body {
+  border: 1px solid #ccc;
+}
+
+/*평균단가 조회 표*/
+.average-prices-table {
+  width: 100%;
+  border-collapse: collapse; /* 테이블 셀 간의 경계 제거 */
+  margin-top: 20px; /* 위쪽 여백 추가 */
+}
+
+/*평균단가 조회 버튼*/
+.average-prices-button {
+  margin-left: 10px;
+}
+
+.average-prices-table th,
+.average-prices-table td {
+  border: 1px solid #ccc; /* 테두리 추가 */
+  padding: 8px; /* 내부 여백 */
+  text-align: center; /* 중앙 정렬 */
+}
+
+.average-prices-table th {
+  background-color: #f0f0f0; /* 헤더 배경색 */
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 800px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  padding: 20px; /* 여백 추가 */
+  background-color: #f9f9f9; /* 배경색 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.chart-title {
+  text-align: center; /* 제목 중앙 정렬 */
+  font-size: 24px; /* 제목 크기 */
+  margin-bottom: 20px; /* 제목 아래 여백 */
+  color: #333; /* 제목 색상 */
+}
+
+/*findId css*/
+/* FindIdPw.css */
+.FindId-container {
+  /*border: 1px black solid;*/
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox 레이아웃 사용 */
+  flex-direction: column; /* 자식 요소를 세로 방향으로 배치 */
+  justify-content: center; /* 자식 요소를 수직 중앙에 정렬 */
+  position: relative; /* 버튼 위치 고정 위해 상대 위치 설정 */
+  padding-bottom: 60px; /* 버튼 공간 확보 */
+}
+
+
+.FindId-h2 {
+  text-align: center;
+  color: #333;
+}
+
+.FindId-label {
+  display: inline;
+  margin: 10px 10px 5px;
+}
+
+.FindId-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px auto;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.FindId-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5680b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.FindId-button:hover {
+  background-color: #0056b3;
+}
+
+.FindId-message {
+  font-size: 16px;
+  text-align: center;
+  color: #5680b5; /* 오류 메시지 색상 */
+}

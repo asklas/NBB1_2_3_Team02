@@ -1,0 +1,78 @@
+.adm-chat-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.adm-chat-user-list {
+    margin-bottom: 20px;
+}
+
+.adm-chat-user {
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.adm-chat-user:hover {
+    background-color: #f0f0f0;
+}
+
+.adm-chat-room {
+    margin-top: 20px;
+    background-color: #ececec;
+}
+
+.adm-chat-messages {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #ececec;
+    border-radius: 10px;
+}
+
+.adm-chat-message {
+    padding: 5px;
+}
+
+.adm-chat-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc; /* 테두리 색상 */
+    border-radius: 5px; /* 둥근 모서리 */
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 0;
+}
+.adm-chat-input:focus {
+    border-color: #5680b5; /* 포커스 시 테두리 색상 변경 */
+}
+
+.adm-chat-button {
+    width: 18%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5680b5;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 2px;
+    margin-right: 0;
+}
+.adm-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adm-chat-button:hover {
+    background-color: #0056b3;
+}
