@@ -23,18 +23,8 @@ jobs:
         run: ./gradlew clean build -x test
 
       # 환경에 맞는 application.yml 파일 설정
-      - name: Set application.yml for production or development
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            # main 브랜치에서는 프로덕션 환경 설정
-            echo "${{ secrets.APPLICATIONS_PROD }}" > ./src/main/resources/application.yml
-            echo "SPRING_PROFILES_ACTIVE=prod" >> $GITHUB_ENV  # 'prod' 환경을 활성화
-          else
-            # 그 외의 브랜치에서는 개발 환경 설정
-            echo "${{ secrets.APPLICATIONS_DEV }}" > ./src/main/resources/application.yml
-            echo "SPRING_PROFILES_ACTIVE=dev" >> $GITHUB_ENV  # 'dev' 환경을 활성화
-          fi
-
+      - run: touch ./src/main/resources/application.yml
+      - run: echo "${{ secrets.APPLICATIONS }}" > ./src/main/resources/application.yml
       - run: touch ./src/main/resources/application-dev.yml
       - run: echo "${{ secrets.APPLICATIONS_DEV }}" > ./src/main/resources/application-dev.yml
       - run: touch ./src/main/resources/application-secret.yml
