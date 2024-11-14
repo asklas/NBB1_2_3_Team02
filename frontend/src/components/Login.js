@@ -9,9 +9,7 @@ function Login({ onLogin, handleBack }) {
 
     //소셜 로그인 로직 부분
     const redirectToNaver = () => {
-        const baseUrl = process.env.NODE_ENV === 'prod'
-            ? 'http://aws-est-env.eba-qadyyncj.ap-northeast-2.elasticbeanstalk.com'
-            : 'http://localhost:8090';  // 개발 환경에서는 localhost 사용
+        const baseUrl = 'http://aws-est-env.eba-qadyyncj.ap-northeast-2.elasticbeanstalk.com';
         window.location.href = `${baseUrl}/login`;
     };
 
