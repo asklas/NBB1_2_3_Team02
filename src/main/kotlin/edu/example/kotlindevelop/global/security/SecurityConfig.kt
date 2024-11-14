@@ -49,7 +49,7 @@ class SecurityConfig(
             .oauth2Login { oauth2 ->
                 oauth2
                     .userInfoEndpoint { it.userService(customOAuth2UserService) }
-                    .defaultSuccessUrl("http://localhost:3000?code=00", true) // 로그인 성공 후 리디렉션할 URL
+                    .defaultSuccessUrl("http://aws-est-env.eba-qadyyncj.ap-northeast-2.elasticbeanstalk.com?code=00", true) // 로그인 성공 후 리디렉션할 URL
                     .failureUrl("/login?error=true")
             }
 
